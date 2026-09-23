@@ -9,13 +9,15 @@ Compose with blocks. Make it yours with PHP and Blade. Publish without a fronten
 
 **Experimental Preview**
 
+[![System contracts](https://github.com/gogoSpace/laravel-platno/actions/workflows/checks.yml/badge.svg)](https://github.com/gogoSpace/laravel-platno/actions/workflows/checks.yml)
+
 [Try the live demo](https://platno.gogospace.cz) · [Quick start](#quick-start) · [Build a plugin](docs/plugins.md) · [Framework integrations](examples/adapters/README.md)
 
 </div>
 
 > **Early software, real pages.** This is a pre-alpha experimental preview, not a beta or a production-ready release. APIs, plugin contracts and content formats may change. Use disposable projects and content while exploring it. [Current capabilities and limits →](docs/compatibility.md)
 
-![Platno editing a real page with its canvas, block outline and plugin inspector](docs/images/editor.png)
+![Platno editing a real page with its canvas, block outline and plugin inspector](docs/images/editor.jpg)
 
 *The real editor, shown with the demo application's custom hero block and visual theme. Templates and artwork belong to the demo; the editing workspace belongs to this package.*
 

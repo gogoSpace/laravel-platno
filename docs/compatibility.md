@@ -31,6 +31,8 @@ Local evidence from 2026-09-23, after the visual-canvas redesign:
 
 The earlier backend baseline passed PHP 8.3/8.4 × Laravel 12/13 before the new canvas test. That is not a claim that the entire latest suite was rerun locally on all four combinations. The [GitHub workflow](../.github/workflows/checks.yml) defines the full matrix; consult its actual runs for remote results.
 
+The [first public CI run](https://github.com/gogoSpace/laravel-platno/actions/runs/35912592710) passed all four PHP 8.3/8.4 × Laravel 12/13 combinations, including each fresh-consumer check. A separate installation from the public repository also completed the README flow through first publication.
+
 Only SQLite and the default private local disk were exercised. MySQL, PostgreSQL, remote storage, minimum Laravel minor releases, PHP versions beyond those listed and production load have not been verified.
 
 ## Browser journeys exercised
