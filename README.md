@@ -1,21 +1,24 @@
-<div align="center">
+# Platno · Experimental Preview
 
-# Platno
+> [!WARNING]
+> **Pre-alpha prototype. Not ready for production.**
+>
+> Platno is being actively designed and built. APIs, plugin contracts and saved-content formats may change without backward compatibility. Upgrades may require recreating your content.
+>
+> **Use disposable projects and content while experimenting.** [Current capabilities and limits →](docs/compatibility.md)
+
+<div align="center">
 
 ### From blank to published.
 
 An extensible visual page editor for Laravel.<br>
 Compose with blocks. Make it yours with PHP and Blade. Publish without a frontend build.
 
-**Experimental Preview**
-
 [![System contracts](https://github.com/gogoSpace/laravel-platno/actions/workflows/checks.yml/badge.svg)](https://github.com/gogoSpace/laravel-platno/actions/workflows/checks.yml)
 
 [Try the live demo](https://platno.gogospace.cz) · [Quick start](#quick-start) · [Build a plugin](docs/plugins.md) · [Framework integrations](examples/adapters/README.md)
 
 </div>
-
-> **Early software, real pages.** This is a pre-alpha experimental preview, not a beta or a production-ready release. APIs, plugin contracts and content formats may change. Use disposable projects and content while exploring it. [Current capabilities and limits →](docs/compatibility.md)
 
 ![Platno editing a real page with its canvas, block outline and plugin inspector](docs/images/editor.jpg)
 
