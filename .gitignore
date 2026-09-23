@@ -1,0 +1,15 @@
+/vendor/
+/.phpunit.cache/
+/.phpunit.result.cache
+/.sandbox/
+/.php-cs-fixer.cache
+/node_modules/
+/.env
+/.env.*
+!/.env.example
+.DS_Store
+__pycache__/
+/docs/status.md
+/docs/delivery-plan.md
+/docs/demo-delivery.md
+/docs/editor-evolution.md

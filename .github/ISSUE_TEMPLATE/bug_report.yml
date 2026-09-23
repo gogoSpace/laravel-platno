@@ -1,0 +1,34 @@
+name: Bug report
+description: Report a reproducible problem in the experimental preview.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For vulnerabilities, use the Security tab's private reporting flow instead of a public issue.
+        Please reproduce in a disposable application without private content.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Explain what you expected and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: How can we reproduce it?
+      description: Minimal steps, configuration, and a small content/plugin example if relevant.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Commit/version, PHP, Laravel, database, browser, and adapter if applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or screenshots
+      description: Remove credentials, personal data and private content.

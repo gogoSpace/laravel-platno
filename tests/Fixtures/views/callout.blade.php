@@ -1,0 +1,1 @@
+<aside>{{ $data['message'] }}</aside>

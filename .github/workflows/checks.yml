@@ -1,0 +1,49 @@
+name: System contracts
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: PHP ${{ matrix.php }} / Laravel ${{ matrix.laravel }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.3', '8.4']
+        laravel: ['12', '13']
+        include:
+          - laravel: '12'
+            testbench: '^10.0'
+          - laravel: '13'
+            testbench: '^11.0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring, dom, xml, sqlite3, pdo_sqlite
+          coverage: none
+      - name: Select the supported Laravel combination
+        run: composer require --dev "laravel/framework:^${{ matrix.laravel }}.0" "orchestra/testbench:${{ matrix.testbench }}" --no-update --no-interaction
+      - name: Resolve dependencies
+        run: composer update --prefer-dist --no-interaction --no-progress
+      - name: Verify package behavior
+        run: composer check
+      - name: Verify document history and adapter boundaries
+        run: node --experimental-default-type=module --test tests/editor_store.test.mjs tests/adapter_bridge.test.mjs
+      - name: Verify a fresh consumer without development dependencies
+        run: python3 tests/consumer_smoke.py '${{ matrix.laravel }}'
